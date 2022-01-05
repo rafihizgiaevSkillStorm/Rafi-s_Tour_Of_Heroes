@@ -3,15 +3,20 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: auto;
 }
 
 input {
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: .5em;
+  margin-block-end: 8px;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
   display: block;
-  width: 100%;
-  padding: .5rem;
-  margin: 1rem 0;
-  box-sizing: border-box;
+  width: 200px;
 }
 
 .heroes li {
@@ -19,8 +24,8 @@ input {
   cursor: pointer;
 }
 
-.heroes li:hover {
-  left: .1em;
+.heroes a:hover {
+  left: 2em;
 }
 
 .heroes a {
@@ -28,11 +33,12 @@ input {
   text-decoration: none;
   background-color: #EEE;
   margin: .5em;
+  margin-block-end: 8px;
   padding: .3em 0;
-  height: 1.6em;
   border-radius: 4px;
   display: block;
-  width: 100%;
+  width: auto;
+  font-weight: bold;
 }
 
 .heroes a:hover {
@@ -47,43 +53,83 @@ input {
 
 .heroes .badge {
   display: inline-block;
-  font-size: small;
+  font-size: medium;
   color: white;
-  padding: 0.8em 0.7em 0 0.7em;
   background-color:#405061;
-  line-height: 1em;
   position: relative;
-  left: -1px;
-  top: -4px;
-  height: 1.8em;
+  margin: auto;
   min-width: 16px;
-  text-align: right;
-  margin-right: .8em;
-  border-radius: 4px 0 0 4px;
+  align-items: center;
+  /* border-radius: 4px 0 0 4px; */
 }
 
 .add-button {
  padding: .5rem 1.5rem;
  font-size: 1rem;
- margin-bottom: 2rem;
+ position: relative;
+ margin: auto; 
+ left: 8px;
+ color: white;
 }
 
 .add-button:hover {
-  color: white;
   background-color: #42545C;
 }
 
 button.delete {
-  position: absolute;
-  left: 210px;
-  top: 5px;
-  background-color: white;
-  color:  #525252;
+  position: relative;
+  margin: auto; 
+  margin-bottom: 5px;
+  /* left: 8px; */
+  width: min-content;
+  background-color:#405061;
+  color:  #ffffff;
   font-size: 1.1rem;
-  padding: 1px 10px 3px 10px;
+  padding: 1px 10px 3px 10px;  
 }
-
 button.delete:hover {
   background-color: #525252;
   color: white;
+}
+label{
+  color: white;
+  position: relative;
+  margin: auto; 
+  left: 8px;
+}
+h2{
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.card {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-color: var(--theme-color);
+  color: black !important;
+}
+.card-body{
+  margin-bottom: 0px;
+}
+.card-body:focus {
+  background-color: lightblue !important;
+  outline-width: 0;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 7px rgba(.2,.2,.2,.2);
+  -webkit-border-radius: 0.3125rem;
+  border-radius: 0.3125rem;
+  border-right: 20px solid var(--theme-color);
+}
+
+
+.card-header {
+  margin-bottom: 10px;
+  margin: auto;
+  background-color: #405061;
+  color:  white !important;
+}
+
+html{
+  background-color: #343f50;
 }

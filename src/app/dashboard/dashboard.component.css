@@ -1,16 +1,17 @@
 h2 {
     text-align: center;
+    color: white;
   }
   
   .heroes-menu {
     padding: 0;
     margin: auto;
-    max-width: 1000px;
+    /* max-width: 1000px; */
   
     /* flexbox */
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-content: flex-start;
     align-items: flex-start;
@@ -27,7 +28,7 @@ h2 {
     text-align: center;
     width: 100%;
     min-width: 70px;
-    margin: .5rem auto;
+    margin: 2px;
     box-sizing: border-box;
   
     /* flexbox */
@@ -44,5 +45,6 @@ h2 {
   }
   
   a:hover {
-    background-color: #000;
+    color: white;
+    background-color: black;
   }

@@ -1,21 +1,37 @@
 h1 {
     margin-bottom: 0; 
     text-align: center;
+    color: #fff;
+    background-color: #3f525c;
+  }
+  #div {
+    background-color: #3f525c;
   }
   nav a {
+    background-color: #3f525c;
+    border-radius: 2px;
     padding: 1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    margin-top: 10px;
     display: inline-block;
-    background-color: #ec1111;
-    color: #2f00ff;
-    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    min-width: 70px;
+    margin-right: 1rem;
+    box-sizing: border-box;
+    
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
   }
   
   nav a:hover {
     color: white;
-    background-color: #42545C;
-  }
-  nav a.active {
     background-color: black;
   }
+ html, body{
+  background-color:#343f50;
+ }
+
+  

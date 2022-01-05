@@ -21,12 +21,19 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void{
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
-  add(name:string): void{
+  add(name:string, damage:number, shield:number, stamina:number, superpower:string): void{
     name = name.trim();
-    if(!name){
+    console.log(name);
+    console.log(damage);
+    console.log(shield);
+    console.log(stamina);
+    console.log(superpower);
+    if(!name || !superpower || damage == 0 || shield == 0 || stamina == 0){
       return;
     }
-    this.heroService.addHero({name} as Hero).subscribe(hero => {
+    var hero:Hero = {name, damage, shield, stamina, superpower} as Hero;
+    console.log(hero);
+    this.heroService.addHero(hero).subscribe(hero => {
       this.heroes.push(hero);
     });
   }

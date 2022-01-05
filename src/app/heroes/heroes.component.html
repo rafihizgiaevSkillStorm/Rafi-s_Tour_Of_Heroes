@@ -1,17 +1,58 @@
-<h2>My Heroes</h2>
-<div>
-    <label for="new-hero">Hero Name: </label>
-    <input id="new-hero" #heroName />
-    <button class="add-button" (click)="add(heroName.value); 
-    heroName.value= ''">Add hero</button>
-</div>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+       </head> 
+<h2>Add Hero</h2>
+<div class="heroes">
+    <label for="new-heroName">Hero Name: </label>
+    <input type="text" id="new-heroName" #heroName />
 
+    <label for="new-heroDamage">Hero Damage: </label>
+    <input type="number" pattern="[0-9]{2}" id="new-heroDamage" min="50" max="99" #heroDamage />
+
+    <label for="new-heroShield">Hero Shield: </label>
+    <input type="number" pattern="[0-9]{2}" id="new-heroShield" min="50" max="99" #heroShield />
+
+    <label for="new-heroStamina">Hero Stamina: </label>
+    <input type="number" pattern="[0-9]{2}" id="new-heroStamina" min="50" max="99" #heroStamina />
+
+    <label for="new-heroSuperpower">Hero Superpower: </label>
+    <input type="text" id="new-heroSuperpower" #heroSuperpower />
+
+    <button class="add-button" (click)="add(heroName.value, heroDamage.valueAsNumber, heroShield.valueAsNumber, heroStamina.valueAsNumber, heroSuperpower.value); 
+    heroName.value= ''; heroDamage.valueAsNumber= 50; heroShield.valueAsNumber= 50; heroStamina.valueAsNumber= 50; heroSuperpower.value= ''">Add hero</button>
+</div>
+<div class="col-md-12">
+<h2>All Heroes</h2>
 <ul class="heroes">
-    <li *ngFor="let hero of heroes">
-        <a routerLink="/detail/{{hero.id}}">  
-        <span class="badge">{{hero.id}}</span>{{hero.name}}
-        </a>
-        <button class="delete" title="delete hero"
-        (click)="delete(hero)">Delete</button>
-    </li>
+    <div class="card text-black bg-light mb-3" *ngFor="let hero of heroes">
+        <a routerLink="/detail/{{hero.id}}">
+        <div class="card-header row"> 
+            <span class="badge">ID: {{hero.id}}  Name: {{hero.name}}</span>
+        </div>
+        <div class="card-body row">
+    <div class="col-md-2 offset-md-1">
+        Damage: {{hero.damage}}
+      <img alt="My image name" src="../../assets/attack.png" style="height: 20px; width: 20px;">
+    </div> 
+        <div class="col-md-2 offset-md-1 card-title">
+        Shield: {{hero.shield}}
+        <img alt="My image name" src="../../assets/shield.png" style="height: 20px; width: 20px;">
+      </div> 
+      <div class="col-md-2 offset-md-1 card-title">
+        Stamina: {{hero.stamina}}
+        <img alt="My image name" src="../../assets/stamina.png" style="height: 20px; width: 20px;">
+      </div> 
+      <div class="col-md-3 card-title">
+        Superpower: {{hero.superpower | uppercase}}
+        <img alt="My image name" src="../../assets/superpower.png" style="height: 20px; width: 20px;">
+      </div> 
+</div>
+</a>
+<button class="delete" title="delete hero"
+        (click)="delete(hero)"><i class="material-icons">delete</i></button>
+</div>
 </ul>
+</div>
+</html>

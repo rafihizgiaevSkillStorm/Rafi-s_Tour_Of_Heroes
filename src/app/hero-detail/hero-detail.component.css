@@ -1,23 +1,46 @@
 label {
-    color: #435960;
+    color: #ffffff;
     font-weight: bold;
   }
   input {
-    font-size: 1em;
-    padding: .5rem;
+      color: #333;
+      text-decoration: none;
+      background-color: #EEE;
+      margin: .5em;
+      margin-block-end: 8px;
+      padding: .3em 0;
+      height: 1.6em;
+      border-radius: 4px;
+      display: block;
+      width: 200px;
+  }
+  #heroID{
+    color: white;
+    
   }
   button {
-    margin-top: 20px;
-    background-color: #eee;
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
+    position: relative;
+    margin: auto; 
+    margin-bottom: 5px;
+    width: fit-content;
+    background-color:#405061;
+    color:  #ffffff;
+    font-size: 1.1rem;
+    padding: 1px 10px 3px 10px;
   }
   button:hover {
-    background-color: #cfd8dc;
+    background-color: #525252;
+    color: white;
   }
   button:disabled {
     background-color: #eee;
     color: #ccc;
     cursor: auto;
+  }
+  h2{
+    color: #ffffff;
+  }
+  html{
+    margin: 15px;
+    background-color: #343f50
   }

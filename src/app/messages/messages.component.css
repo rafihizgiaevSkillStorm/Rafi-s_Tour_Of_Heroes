@@ -1,0 +1,36 @@
+h2{
+    background-color:#343f50;
+    color: white;
+    position: relative;
+    margin: auto; 
+    left: 8px;
+}
+
+div div{
+    color: white;
+    background-color:#343f50;
+    position: relative;
+    margin: auto; 
+    padding: 1px 10px 3px 10px;
+}
+
+button {
+    position: relative;
+    margin: auto; 
+    margin-bottom: 5px;
+    left: 8px;
+    width: fit-content;
+    background-color:#405061;
+    color:  #ffffff;
+    font-size: 1.1rem;
+    padding: 1px 10px 3px 10px;
+  }
+
+button:hover {
+    background-color: #525252;
+    color: white;
+  }
+html{
+    background-color:#343f50;
+    margin-left: 8px;
+}
