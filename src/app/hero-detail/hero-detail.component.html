@@ -9,13 +9,13 @@
             <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
 
             <label for="hero-damage">Hero damage: {{hero.damage}}</label>
-            <input id="hero-damage" [(ngModel)]="hero.damage" placeholder="damage">
+            <input id="hero-damage" [(ngModel)]="hero.damage" placeholder="damage" type="number" pattern="[0-9]{2}" min="50" max="99" #heroDamage>
             
             <label for="hero-shield">Hero shield: {{hero.shield}}</label>
-            <input id="hero-shield" [(ngModel)]="hero.shield" placeholder="shield">
+            <input id="hero-shield" [(ngModel)]="hero.shield" placeholder="shield" type="number" pattern="[0-9]{2}" min="50" max="99" #heroShield>
             
             <label for="hero-stamina">Hero stamina: {{hero.stamina}}</label>
-            <input id="hero-stamina" [(ngModel)]="hero.stamina" placeholder="stamina">
+            <input id="hero-stamina" [(ngModel)]="hero.stamina" placeholder="stamina" type="number" pattern="[0-9]{2}" min="50" max="99" #heroStamina>
             
             <label for="hero-superpower">Hero superpower: {{hero.superpower}}</label>
             <input id="hero-superpower" [(ngModel)]="hero.superpower" placeholder="superpower">
