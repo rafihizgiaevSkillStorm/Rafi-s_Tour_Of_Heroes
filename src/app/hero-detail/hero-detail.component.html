@@ -5,19 +5,19 @@
         <span>Id: </span>{{hero.id}}
     </div>
         <div>   
-            <label for="hero-name">Hero name:  {{hero.name}}</label>
+            <label for="hero-name">Hero Name:  {{hero.name}}</label>
             <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
 
-            <label for="hero-damage">Hero damage: {{hero.damage}}</label>
+            <label for="hero-damage">Hero Damage: {{hero.damage}}</label>
             <input id="hero-damage" [(ngModel)]="hero.damage" placeholder="damage" type="number" pattern="[0-9]{2}" min="50" max="99" #heroDamage>
             
-            <label for="hero-shield">Hero shield: {{hero.shield}}</label>
+            <label for="hero-shield">Hero Shield: {{hero.shield}}</label>
             <input id="hero-shield" [(ngModel)]="hero.shield" placeholder="shield" type="number" pattern="[0-9]{2}" min="50" max="99" #heroShield>
             
-            <label for="hero-stamina">Hero stamina: {{hero.stamina}}</label>
+            <label for="hero-stamina">Hero Stamina: {{hero.stamina}}</label>
             <input id="hero-stamina" [(ngModel)]="hero.stamina" placeholder="stamina" type="number" pattern="[0-9]{2}" min="50" max="99" #heroStamina>
             
-            <label for="hero-superpower">Hero superpower: {{hero.superpower}}</label>
+            <label for="hero-superpower">Hero Superpower: {{hero.superpower}}</label>
             <input id="hero-superpower" [(ngModel)]="hero.superpower" placeholder="superpower">
         </div>
     </div>
