@@ -1,5 +1,65 @@
-<html><div *ngIf="messageService.messages.length">
-    <h2>Messages</h2>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    </head> 
+    <div *ngIf="messageService.messages.length">
+
+        <h2>Messages</h2>
     <button class="clear" (click)="messageService.clear()">Clear messages</button>
-    <div *ngFor='let message of messageService.messages'>{{message}}</div>
-</div></html>
+    <div *ngFor='let message of messageService.messages'>
+                <p>{{message}}</p>
+    </div>
+</div>
+
+<div *ngIf="messageService.fightMessages.length && messageService.messages.length < 1">
+
+    <h2>Battle Log : </h2>
+    <button class="clear" (click)="messageService.clearFights()">Clear Battle Log</button>
+<!-- <button class="clear" (click)="messageService.clearBattleLog()">Clear messages</button> -->
+<!-- <div *ngFor='let message of messageService.fightMessages'> -->
+    <ul class="timeline" *ngFor='let message of messageService.fightMessages'>
+        <li>
+            <!-- <div *ngIf="messageService.turnToAttack==1" class="direction-l">
+                <div class="flag-wrapper">
+                    <span class="flag">{{message}}</span>
+                    <span class="time-wrapper"></span>
+                </div>
+                <div class="desc">Player 1's turn </div>
+            </div>
+            <div *ngIf="messageService.turnToAttack==2" >
+                
+            </div> -->
+       
+        <div  *ngIf="message.turnToAttack == 1">
+            <div class="direction-l">
+                <div class="desc">Player 1's turn</div>
+                <div class="flag-wrapper">
+                    <span class="flag"> {{message.text}}</span>
+                    <!-- <span class="time-wrapper"></span> -->
+                </div>
+                
+            </div>
+        </div>
+        <div  *ngIf="message.turnToAttack == 2 ">
+            <div class="direction-l">
+                <div class="desc">Player 2's turn</div>
+                <div class="flag-wrapper">
+                    <span class="flag"> {{message.text}}</span>
+                    <!-- <span class="time-wrapper"></span> -->
+                </div>
+                
+            </div>
+        </div>
+    </li>
+    </ul>
+</div>
+<!-- </div> -->
+   
+
+</html>
+
+  
+
+<!--  -->

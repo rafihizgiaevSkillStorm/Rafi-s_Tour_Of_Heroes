@@ -11,6 +11,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './in-memory-data.service';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
+import { BattleComponent } from './battle/battle.component';
 
 
 
@@ -21,7 +22,8 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeroSearchComponent
+    HeroSearchComponent,
+    BattleComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [BattleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

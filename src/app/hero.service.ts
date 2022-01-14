@@ -13,7 +13,7 @@ export class HeroService {
   private heroesUrl = 'http://localhost:4567/heroes/v1';
   geturl = 'http://localhost:4567/heroes/v1/heroes';
 
-  constructor(private http: HttpClient, private messageService: MessageService) { }
+  constructor(private http: HttpClient, private messageService: MessageService) { this.messageService.clearFights();}
 
   getHeroes(): Observable<Hero[]>{
   return this.http.get<Hero[]>(this.geturl).pipe(

@@ -6,22 +6,28 @@
 <h2>Add Hero</h2>
 <div class="heroes">
     <label for="new-heroName">Hero Name: </label>
+    <br>
     <input type="text" id="new-heroName" #heroName />
-
+    <br>
     <label for="new-heroDamage">Hero Damage: </label>
-    <input type="number" pattern="[0-9]{2}" id="new-heroDamage" min="50" max="99" #heroDamage />
-
+    <br>
+    <input type="number" pattern="[0-9]{2}" id="new-heroDamage" min="50" max="99" #heroDamage /><img alt="attack" src="../../assets/attack.png" style="height: 20px; width: 20px;">
+    <br>
     <label for="new-heroShield">Hero Shield: </label>
-    <input type="number" pattern="[0-9]{2}" id="new-heroShield" min="50" max="99" #heroShield />
-
+    <br>
+    <input type="number" pattern="[0-9]{2}" id="new-heroShield" min="50" max="99" #heroShield /><img alt="shield" src="../../assets/shield.png" style="height: 20px; width: 20px;">
+    <br>
     <label for="new-heroStamina">Hero Stamina: </label>
-    <input type="number" pattern="[0-9]{2}" id="new-heroStamina" min="50" max="99" #heroStamina />
-
+    <br>
+    <input type="number" pattern="[0-9]{2}" id="new-heroStamina" min="50" max="99" #heroStamina /><img alt="stamina" src="../../assets/stamina.png" style="height: 20px; width: 20px;">
+    <br>
     <label for="new-heroSuperpower">Hero Superpower: </label>
-    <input type="text" id="new-heroSuperpower" #heroSuperpower />
+    <br>
+    <input type="text" id="new-heroSuperpower" #heroSuperpower /><img alt="superpower" src="../../assets/superpower.png" style="height: 20px; width: 20px;">
+    <br>
 
     <button class="add-button" (click)="add(heroName.value, heroDamage.valueAsNumber, heroShield.valueAsNumber, heroStamina.valueAsNumber, heroSuperpower.value); 
-    heroName.value= ''; heroDamage.valueAsNumber= 50; heroShield.valueAsNumber= 50; heroStamina.valueAsNumber= 50; heroSuperpower.value= ''">Add hero</button>
+    heroName.value= ''; heroDamage.valueAsNumber= 50; heroShield.valueAsNumber= 50; heroStamina.valueAsNumber= 50; heroSuperpower.value= ''"><i class="material-icons">person add</i></button>
 </div>
 <div class="col-md-12">
 <h2>All Heroes</h2>
@@ -51,7 +57,7 @@
 </div>
 </a>
 <button class="delete" title="delete hero"
-        (click)="delete(hero)"><i class="material-icons">delete</i></button>
+        (click)="delete(hero)"><i class="material-icons">person remove</i></button>
 </div>
 </ul>
 </div>

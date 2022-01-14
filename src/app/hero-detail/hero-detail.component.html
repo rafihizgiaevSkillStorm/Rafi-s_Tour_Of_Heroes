@@ -6,19 +6,24 @@
     </div>
         <div>   
             <label for="hero-name">Hero Name:  {{hero.name}}</label>
+            <br>
             <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
-
+            <br>
             <label for="hero-damage">Hero Damage: {{hero.damage}}</label>
-            <input id="hero-damage" [(ngModel)]="hero.damage" placeholder="damage" type="number" pattern="[0-9]{2}" min="50" max="99" #heroDamage>
-            
+            <br>
+            <input id="hero-damage" [(ngModel)]="hero.damage" placeholder="damage" type="number" pattern="[0-9]{2}" min="50" max="99" #heroDamage><img alt="attack" src="../../assets/attack.png" style="height: 20px; width: 20px;">
+            <br>           
             <label for="hero-shield">Hero Shield: {{hero.shield}}</label>
-            <input id="hero-shield" [(ngModel)]="hero.shield" placeholder="shield" type="number" pattern="[0-9]{2}" min="50" max="99" #heroShield>
-            
+            <br>
+            <input id="hero-shield" [(ngModel)]="hero.shield" placeholder="shield" type="number" pattern="[0-9]{2}" min="50" max="99" #heroShield><img alt="shield" src="../../assets/shield.png" style="height: 20px; width: 20px;">
+            <br>  
             <label for="hero-stamina">Hero Stamina: {{hero.stamina}}</label>
-            <input id="hero-stamina" [(ngModel)]="hero.stamina" placeholder="stamina" type="number" pattern="[0-9]{2}" min="50" max="99" #heroStamina>
-            
+            <br>
+            <input id="hero-stamina" [(ngModel)]="hero.stamina" placeholder="stamina" type="number" pattern="[0-9]{2}" min="50" max="99" #heroStamina><img alt="stamina" src="../../assets/stamina.png" style="height: 20px; width: 20px;">
+            <br>  
             <label for="hero-superpower">Hero Superpower: {{hero.superpower}}</label>
-            <input id="hero-superpower" [(ngModel)]="hero.superpower" placeholder="superpower">
+            <br>
+            <input id="hero-superpower" [(ngModel)]="hero.superpower" placeholder="superpower"><img alt="superpower" src="../../assets/superpower.png" style="height: 20px; width: 20px;">
         </div>
     </div>
     <div>

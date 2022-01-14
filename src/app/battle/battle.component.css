@@ -1,0 +1,171 @@
+h2{
+    color: white;
+    text-align:center;
+}
+label{
+    color: white;
+    display:block;
+}
+.multiplayer{
+    color: white;
+}
+.MultiHeroes{
+    display:block;
+    color: #333;
+    text-decoration: none;
+    margin: .5em;
+    margin-block-end: 8px;
+    padding: .3em 0;
+    border-radius: 4px;
+    font-weight: bold;
+    
+}
+.badge {
+    display:block;
+    font-size: medium;
+    color: white;
+    background-color:#405061;
+    position: relative;
+    margin: auto;
+    width: fixed;
+    align-items: center;
+    /* border-radius: 4px 0 0 4px; */
+  }
+  input:active {
+    background-color: #b60c0c;
+    color: #fafafa;
+  }
+  input{
+    display:block;
+    
+  }
+  .com{
+    display:block;
+    font-size: medium;
+    color: white;
+    background-color:#405061;
+    position: relative;
+    /* margin: auto; */
+    width: fixed;
+    align-items: center;
+  }
+ 
+  #player1Turn{
+      visibility: hidden;
+      
+  }
+  .card {
+    
+    border-color: var(--theme-color);
+    color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: 1em;
+  margin-block-end: 8px;
+  padding: .3em 0;
+  border-radius: 4px;
+  display: block;
+  width: auto;
+  font-weight: bold;
+  }
+  .card-body{
+    margin:1rem;
+    background-color:#405061;
+    color:white;
+    /* display: inline-block; */
+  }
+ 
+  .card-header, .card-footer{
+    margin-bottom: 10px;
+    margin: 1rem;
+    background-color: #405061;
+    color:  white !important;
+  }
+  .numberOfHits{
+        margin-left:3rem;
+  }
+  html{
+    margin-left:1rem;
+  }
+
+  .heroes {
+    margin: 0 0 2em 0;
+    list-style-type: none;
+    padding: 0;
+    width: auto;
+  }
+  
+  img{
+    display: inline-block;
+  }
+  
+  .heroes li {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .heroes a:hover {
+    left: 2em;
+  }
+  
+  .heroes a {
+    color: #333;
+    text-decoration: none;
+    background-color: #EEE;
+    margin: .5em;
+    margin-block-end: 8px;
+    padding: .3em 0;
+    border-radius: 4px;
+    display: block;
+    width: auto;
+    font-weight: bold;
+  }
+  
+  .heroes a:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+  }
+  
+  .heroes a:active {
+    background-color: #525252;
+    color: #fafafa;
+  }
+  
+  .heroes .badge {
+    display: inline-block;
+    font-size: medium;
+    color: white;
+    background-color:#405061;
+    position: relative;
+    margin: auto;
+    min-width: 16px;
+    align-items: center;
+    /* border-radius: 4px 0 0 4px; */
+  }
+  
+  .card {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-color: var(--theme-color);
+    color: black !important;
+  }
+  
+  .card-body:focus {
+    background-color: lightblue !important;
+    outline-width: 0;
+    -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 7px rgba(.2,.2,.2,.2);
+    -webkit-border-radius: 0.3125rem;
+    border-radius: 0.3125rem;
+    border-right: 20px solid var(--theme-color);
+  }
+  
+  
+  .card-header {
+    margin-bottom: 10px;
+    margin: auto;
+    background-color: #405061;
+    color:  white !important;
+  }

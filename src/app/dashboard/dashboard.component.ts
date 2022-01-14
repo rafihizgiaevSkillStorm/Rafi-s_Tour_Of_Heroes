@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { MessageService } from '../message.service';
 
 
 @Component({
@@ -12,10 +13,11 @@ export class DashboardComponent implements OnInit {
 
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.getHeroes();
+    
   }
   getHeroes(): void {
     
@@ -30,5 +32,6 @@ export class DashboardComponent implements OnInit {
       console.log(this.heroes[i]);
       }
     });
+    this.messageService.clearFights();
   }
 }

@@ -1,0 +1,228 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+       </head> 
+   
+  
+<div *ngIf="!fighting">
+
+<div class="multiplayer" >
+    <h2>Welcome to The Battle Arena!</h2>
+    <input type="checkbox" id="multiplayer" style="display:inline-block" name="multiplayer" value={{multiPlayer}} (change)="numberOfPlayers()" > Multi-Player
+</div>
+   
+
+<div class="row">
+
+<div  *ngIf="!singlePlayer && player1; else isSinglePlayer" class="col-md-5">
+    <div *ngIf="player1">
+    <h2>Player 1</h2>
+    <ul class="heroes">
+        <div class="card text-black bg-light mb-3" >
+            <div class="card-header row"> 
+                <span class="badge">ID: {{player1.id}}  Name: {{player1.name}}</span>
+            </div>
+            <div class="card-body row">
+        <div class="row card-title">
+            Damage: {{player1.damage}}
+          <img alt="My image name" src="../../assets/attack.png" style="height: 20px; width: 20px;">
+        </div> 
+            <div class="row card-title">
+            Shield: {{player1.shield}}
+            <img alt="My image name" src="../../assets/shield.png" style="height: 20px; width: 20px;">
+          </div> 
+          <div class="row card-title">
+            Stamina: {{player1.stamina}}
+            <img alt="My image name" src="../../assets/stamina.png" style="height: 20px; width: 20px;">
+          </div> 
+          <div class="row card-title">
+            Superpower: {{player1.superpower | uppercase}}
+            <img alt="My image name" src="../../assets/superpower.png" style="height: 20px; width: 20px;">
+          </div> 
+    </div>
+    </div>
+    </ul>
+</div>
+      <span></span>
+    <form> 
+        <input class="com" type="submit" (click)="unsetPlayer1()" value="Click to Choose Again">
+     </form>
+</div>
+
+
+
+<div *ngIf="!multiPlayer; else isNotSinglePlayer" class="col-md-5" >
+    <span class="badge row">
+   <input class="com" type="submit" (click)="computerHero()" value="Click to Randomly Choose Computer Hero">
+</span>
+   <form>
+        <br>
+        <label *ngIf="player2" class="btn btn-secondary">{{player2.name}} , Damage: {{player2.damage}}, Shield: {{player2.shield}}, Stamina: {{player2.stamina}}, Superpower: {{player2.superpower}}</label>
+    </form>
+</div>
+
+<ng-template  #isSinglePlayer>
+    <div class="col-md-5">
+    <span class="badge">Select Player 1</span> 
+    <form>
+        <div *ngFor="let hero of heroes" class="MultiHeroes">
+            <input type="radio" class="btn-check" [value]="hero" [(ngModel)]="player1" name="options" id="{{hero.name}}+{{hero.id}}" (click)="setPlayer1(hero)">
+            <label class="btn btn-secondary" for="{{hero.name}}+{{hero.id}}">{{hero.name}} , Damage: {{hero.damage}}, Shield: {{hero.shield}}, Stamina: {{hero.stamina}}, Superpower: {{hero.superpower}}</label>
+        </div>
+    </form>
+</div>
+</ng-template>
+
+
+<ng-template  #isNotSinglePlayer>
+<div class="col-md-5" >
+    <div *ngIf="!player2; else secondPlayerDetail">
+    <span class="badge">Select Player 2</span> 
+    <form>
+        <div *ngFor="let hero of heroes" class="MultiHeroes">
+            <input type="radio" class="btn-check" name="options" id="{{hero.name}}" [value]="hero" [(ngModel)]="player2"  autocomplete="off">
+            <label class="btn btn-secondary" for="{{hero.name}}">{{hero.name}} , Damage: {{hero.damage}}, Shield: {{hero.shield}}, Stamina: {{hero.stamina}}, Superpower: {{hero.superpower}}</label>
+        </div>
+    </form>
+</div>
+</div>
+</ng-template>
+<ng-template #secondPlayerDetail> 
+    <div *ngIf="player2">
+    <h2>Player 2</h2>
+    <ul class="heroes">
+        <div class="card text-black bg-light mb-3" >
+            <div class="card-header row"> 
+                <span class="badge">ID: {{player2.id}}  Name: {{player2.name}}</span>
+            </div>
+            <div class="card-body row">
+        <div class="row card-title">
+            Damage: {{player2.damage}}
+          <img alt="My image name" src="../../assets/attack.png" style="height: 20px; width: 20px;">
+        </div> 
+            <div class="row card-title">
+            Shield: {{player2.shield}}
+            <img alt="My image name" src="../../assets/shield.png" style="height: 20px; width: 20px;">
+          </div> 
+          <div class="row card-title">
+            Stamina: {{player2.stamina}}
+            <img alt="My image name" src="../../assets/stamina.png" style="height: 20px; width: 20px;">
+          </div> 
+          <div class="row card-title">
+            Superpower: {{player2.superpower | uppercase}}
+            <img alt="My image name" src="../../assets/superpower.png" style="height: 20px; width: 20px;">
+          </div> 
+    </div>
+    </div>
+    </ul>
+    <!-- <div>
+        <label>Id: {{player2.id}}</label>
+        <br>
+    </div>
+        <div>   
+            <label for="hero-name">Player2 Hero:  {{player2.name}}</label>
+            <br>
+            
+            <label for="hero-damage">Hero Damage: {{player2.damage}}</label>
+            <br>
+                
+            <label for="hero-shield">Hero Shield: {{player2.shield}}</label>
+            <br>
+            
+            <label for="hero-stamina">Hero Stamina: {{player2.stamina}}</label>
+            <br>
+           
+            <label for="hero-superpower">Hero Superpower: {{player2.superpower}}</label>
+            <br>
+            
+        </div> 
+    ///////////////////////////////////////////////////////////////////
+    <div>
+        <label>Id: {{player1.id}}</label>
+        <br>
+    </div>
+        <div>   
+            <label for="hero-name">Hero Name:  {{player1.name}}</label>
+            <br>
+            
+            <label for="hero-damage">Hero Damage: {{player1.damage}}</label>
+            <br>
+                
+            <label for="hero-shield">Hero Shield: {{player1.shield}}</label>
+            <br>
+            
+            <label for="hero-stamina">Hero Stamina: {{player1.stamina}}</label>
+            <br>
+           
+            <label for="hero-superpower">Hero Superpower: {{player1.superpower}}</label>
+            <br>
+            
+        </div>
+    -->
+      <span></span>
+    <form> 
+        <input class="com" type="submit" (click)="unsetPlayer2()" value="Click to Choose Again">
+     </form>
+     </div>   
+</ng-template>
+
+</div>
+</div>
+<br>
+
+<div *ngIf="player1 && player2" class="card text-black bg-dark ">
+    <div class="card-header row"> 
+        <span class="badge">Welcome to the Arena! <i class="material-icons">stadium</i></span>
+    </div>
+    <div class="card-body row">
+        <div class="col-md-2 offset-md-2 card-title">
+            <p *ngIf="!isNaN(hp1)">HP1 : {{hp1}} <br> {{player1.name}} <br><div id="player1Turn"> <i class="material-icons" id="icon1">sports</i></div></p><br>
+        </div>
+        <div class="row col-md-2 offset-md-1 card-title" style="height:fit-content">
+            <input class="com" type="submit" (click)="battle()" value="Fight!"><br>
+            <p class="numberOfHits" *ngIf="numberOfMoves >= 0"> Number of Hits : {{numberOfMoves}}</p>
+        </div>
+        <div class="col-md-2 offset-md-2 card-title">
+            <p *ngIf="!isNaN(hp2)">HP2 : {{hp2}} <br> {{player2.name}} <br><div id="player2Turn"> <i class="material-icons" id="icon2">sports</i></div></p>
+        </div>
+        <div class="row">
+            <div class="col-md-2 offset-md-5 card-title">
+        
+            </div>
+        </div>
+    </div>
+    <div *ngIf="this.fighting" class="card-footer row">   
+         <label id="action"></label> 
+   <input class="btn btn-secondary" type="submit" (click)="cancelFight()" value="Leave Arena">
+</div>
+</div>        
+</html>
+
+<!-- 
+
+<ul class="heroes">
+    <div class="card text-black bg-light mb-3" >
+        <div class="card-header row"> 
+            <span class="badge">ID: {{player2.id}}  Name: {{player2.name}}</span>
+        </div>
+        <div class="card-body row">
+    <div class="col-md-2 offset-md-1">
+        Damage: {{player2.damage}}
+      <img alt="My image name" src="../../assets/attack.png" style="height: 20px; width: 20px;">
+    </div> 
+        <div class="col-md-2 offset-md-1 card-title">
+        Shield: {{player2.shield}}
+        <img alt="My image name" src="../../assets/shield.png" style="height: 20px; width: 20px;">
+      </div> 
+      <div class="col-md-2 offset-md-1 card-title">
+        Stamina: {{player2.stamina}}
+        <img alt="My image name" src="../../assets/stamina.png" style="height: 20px; width: 20px;">
+      </div> 
+      <div class="col-md-3 card-title">
+        Superpower: {{player2.superpower | uppercase}}
+        <img alt="My image name" src="../../assets/superpower.png" style="height: 20px; width: 20px;">
+      </div> 
+</div>
+</div>
+</ul> -->

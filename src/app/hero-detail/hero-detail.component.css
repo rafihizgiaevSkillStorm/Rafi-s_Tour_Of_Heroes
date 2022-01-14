@@ -11,12 +11,11 @@ label {
       padding: .3em 0;
       height: 1.6em;
       border-radius: 4px;
-      display: block;
+      display: inline-block;
       width: 200px;
   }
   #heroID{
     color: white;
-    
   }
   button {
     position: relative;
@@ -43,4 +42,7 @@ label {
   html{
     margin: 15px;
     background-color: #343f50
+  }
+  img{
+    display: inline-block;
   }
